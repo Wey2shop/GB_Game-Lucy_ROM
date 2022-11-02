@@ -186,12 +186,145 @@
                     "command": "EVENT_SAVE_DATA",
                     "args": {
                         "saveSlot": 0,
-                        "__scriptTabs": "save"
+                        "__scriptTabs": "save",
+                        "__collapse": true
                     },
                     "children": {
                         "true": []
                     },
                     "id": "d54db95c-6081-476b-8ea6-e3b3c93c5536"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Pick Game to play",
+                        "__collapse": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_TEXT",
+                                "args": {
+                                    "text": [
+                                        "What game would\nyou like to\nplay?"
+                                    ],
+                                    "avatarId": "",
+                                    "__collapse": true
+                                },
+                                "id": "59012dff-446b-4bce-a45a-9999df54dd87"
+                            },
+                            {
+                                "command": "EVENT_MENU",
+                                "args": {
+                                    "variable": "L0",
+                                    "items": 3,
+                                    "option1": "Band Practice",
+                                    "option2": "Role play game",
+                                    "option3": "Raven Jumper",
+                                    "option4": "",
+                                    "option5": "",
+                                    "option6": "",
+                                    "option7": "",
+                                    "option8": "",
+                                    "cancelOnB": true,
+                                    "layout": "dialogue",
+                                    "__collapse": true
+                                },
+                                "id": "a38d254d-390e-4c8c-adba-e4a9d76702f0"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "L0",
+                                    "operator": "==",
+                                    "comparator": 1,
+                                    "__collapseElse": true,
+                                    "__label": "if band practive",
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "64d0b55e-b288-4b5d-a667-72731937538a",
+                                                "x": 0,
+                                                "y": 0,
+                                                "direction": "",
+                                                "fadeSpeed": "2",
+                                                "__label": "Load Band practice dodge",
+                                                "__collapse": true
+                                            },
+                                            "id": "c5964785-4ded-42cf-b457-46995eea96ae"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "8206d96e-287f-46b0-a867-5c86428dec8d"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "L0",
+                                    "operator": "==",
+                                    "comparator": 2,
+                                    "__collapseElse": true,
+                                    "__collapse": true,
+                                    "__label": "if RPG"
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "17bb6e13-c8d8-4913-9649-100be99725b0",
+                                                "x": 0,
+                                                "y": 0,
+                                                "direction": "",
+                                                "fadeSpeed": "2",
+                                                "__collapse": true,
+                                                "__label": "Load RPG"
+                                            },
+                                            "id": "a7b1e92d-7ace-4396-8407-92d7a9f2db16"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "706c0d2b-151a-46b8-9727-ef5a6232e72a"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "L0",
+                                    "operator": "==",
+                                    "comparator": 3,
+                                    "__collapseElse": true,
+                                    "__collapse": true,
+                                    "__label": "IF Jumper"
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "81c0266d-a215-4534-9d66-dad24a96c287",
+                                                "x": 0,
+                                                "y": 0,
+                                                "direction": "",
+                                                "fadeSpeed": "2",
+                                                "__collapse": false,
+                                                "__label": "Load Jumper"
+                                            },
+                                            "id": "db36943a-df13-449a-bf8c-bb84b549332b"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "1c5c6c61-c487-42fe-b516-9d93033b51c9"
+                            }
+                        ]
+                    },
+                    "id": "2e1ca0e3-1a51-4eae-be71-abb3ce0fd9e6"
                 }
             ],
             "playerHit1Script": [],
@@ -224,44 +357,10 @@
                     "id": "9fef663f-842a-4053-bbc4-489314c2da91"
                 },
                 {
-                    "command": "EVENT_TEXT",
+                    "command": "EVENT_GROUP",
                     "args": {
-                        "text": [
-                            "So, \nYou want to join\nThe Band...",
-                            "To play this game\nYou will need  to\nfind me some...\n-Instruments"
-                        ],
-                        "avatarId": "",
-                        "__collapse": true
-                    },
-                    "id": "df38c96d-ea7b-47be-81a5-2aac04cf50b2"
-                },
-                {
-                    "command": "EVENT_TEXT",
-                    "args": {
-                        "text": [
-                            "Can you do that?"
-                        ],
-                        "avatarId": "",
-                        "__collapse": true
-                    },
-                    "id": "139a97ca-42c4-4b0e-aa0b-27fc5dfcaa18"
-                },
-                {
-                    "command": "EVENT_CHOICE",
-                    "args": {
-                        "variable": "L0",
-                        "trueText": "Yes",
-                        "falseText": "no",
-                        "__collapse": true
-                    },
-                    "id": "445d6e69-6bff-4b03-a6b9-05f3396e6e87"
-                },
-                {
-                    "command": "EVENT_IF_TRUE",
-                    "args": {
-                        "variable": "L0",
-                        "__collapseElse": true,
-                        "__collapse": false
+                        "__collapse": true,
+                        "__label": "Ask if you want to find instruments"
                     },
                     "children": {
                         "true": [
@@ -269,62 +368,110 @@
                                 "command": "EVENT_TEXT",
                                 "args": {
                                     "text": [
-                                        "Yayy!! Lets Go."
+                                        "So, \nYou want to join\nThe Band...",
+                                        "To play this game\nYou will need  to\nfind me some...",
+                                        "  -Instruments-"
                                     ],
-                                    "avatarId": ""
+                                    "avatarId": "",
+                                    "__collapse": false
                                 },
-                                "id": "52f3fe59-e569-4534-bf08-11bb81c7fc94"
+                                "id": "df38c96d-ea7b-47be-81a5-2aac04cf50b2"
                             },
-                            {
-                                "command": "EVENT_SWITCH_SCENE",
-                                "args": {
-                                    "sceneId": "431d9da0-e646-4ff0-a3a0-7aa8d6a64343",
-                                    "x": 18,
-                                    "y": 17,
-                                    "direction": "up",
-                                    "fadeSpeed": "2"
-                                },
-                                "id": "7d756212-86e7-4f1f-a6cd-69e3e2129ba6"
-                            }
-                        ],
-                        "false": []
-                    },
-                    "id": "4b747828-e767-4a2b-8927-9583274e91e8"
-                },
-                {
-                    "command": "EVENT_IF_FALSE",
-                    "args": {
-                        "variable": "L0",
-                        "__collapseElse": true,
-                        "__collapse": true
-                    },
-                    "children": {
-                        "true": [
                             {
                                 "command": "EVENT_TEXT",
                                 "args": {
                                     "text": [
-                                        "Lets go find Lucy,\nwe can find them \nlater."
+                                        "Can you do that?"
                                     ],
-                                    "avatarId": ""
+                                    "avatarId": "",
+                                    "__collapse": true
                                 },
-                                "id": "ee2d2ad5-76e6-43c9-b163-bc01953689fc"
+                                "id": "139a97ca-42c4-4b0e-aa0b-27fc5dfcaa18"
                             },
                             {
-                                "command": "EVENT_SWITCH_SCENE",
+                                "command": "EVENT_CHOICE",
                                 "args": {
-                                    "sceneId": "d6db78bb-c69d-44bd-a16a-3f371b1f837e",
-                                    "x": 0,
-                                    "y": 0,
-                                    "direction": "",
-                                    "fadeSpeed": "2"
+                                    "variable": "L0",
+                                    "trueText": "Yes",
+                                    "falseText": "no",
+                                    "__collapse": true
                                 },
-                                "id": "8ffe6e33-29ea-4801-8a95-d3d6095c782a"
+                                "id": "445d6e69-6bff-4b03-a6b9-05f3396e6e87"
+                            },
+                            {
+                                "command": "EVENT_IF_TRUE",
+                                "args": {
+                                    "variable": "L0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_TEXT",
+                                            "args": {
+                                                "text": [
+                                                    "Yayy!! Lets Go."
+                                                ],
+                                                "avatarId": "",
+                                                "__collapse": true
+                                            },
+                                            "id": "52f3fe59-e569-4534-bf08-11bb81c7fc94"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "431d9da0-e646-4ff0-a3a0-7aa8d6a64343",
+                                                "x": 18,
+                                                "y": 17,
+                                                "direction": "up",
+                                                "fadeSpeed": "2"
+                                            },
+                                            "id": "7d756212-86e7-4f1f-a6cd-69e3e2129ba6"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "4b747828-e767-4a2b-8927-9583274e91e8"
+                            },
+                            {
+                                "command": "EVENT_IF_FALSE",
+                                "args": {
+                                    "variable": "L0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_TEXT",
+                                            "args": {
+                                                "text": [
+                                                    "Lets go find Lucy,\nwe can find them \nlater."
+                                                ],
+                                                "avatarId": ""
+                                            },
+                                            "id": "ee2d2ad5-76e6-43c9-b163-bc01953689fc"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH_SCENE",
+                                            "args": {
+                                                "sceneId": "d6db78bb-c69d-44bd-a16a-3f371b1f837e",
+                                                "x": 0,
+                                                "y": 0,
+                                                "direction": "",
+                                                "fadeSpeed": "2"
+                                            },
+                                            "id": "8ffe6e33-29ea-4801-8a95-d3d6095c782a"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "62ffbc71-4071-4f19-a99f-728b49cb2ee6"
                             }
-                        ],
-                        "false": []
+                        ]
                     },
-                    "id": "62ffbc71-4071-4f19-a99f-728b49cb2ee6"
+                    "id": "8885ee60-d9d3-49fc-85d1-ad42f67be053"
                 }
             ],
             "playerHit1Script": [],
@@ -377,7 +524,7 @@
         },
         {
             "name": "Scene 7",
-            "backgroundId": "e1a2125f-cfd2-4089-9323-f5bf293c1405",
+            "backgroundId": "9b1af2c7-14e9-4c9a-87e9-034b04fa7997",
             "width": 20,
             "height": 18,
             "type": "TOPDOWN",
@@ -2139,16 +2286,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "64d0b55e-b288-4b5d-a667-72731937538a",
-        "startX": 18,
-        "startY": 17,
+        "startSceneId": "f05f3984-5387-4578-9ca8-a699bafa05a3",
+        "startX": 0,
+        "startY": 0,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "up",
         "showCollisions": true,
         "showConnections": true,
         "worldScrollX": 25,
-        "worldScrollY": 0,
+        "worldScrollY": 106,
         "zoom": 100,
         "customColorsEnabled": false,
         "sgbEnabled": false,
