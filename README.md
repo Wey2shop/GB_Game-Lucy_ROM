@@ -1,6 +1,6 @@
 # GB_Game_rom
 ## Details
-![Preview](/Screencap.png?raw=true "img")
+![Preview](/Screencap.jpg?raw=true "img")
 * This is still a work in progress.
 * You can play the game by downloading the .Rom file 
 * You can also play it online using the link below.
